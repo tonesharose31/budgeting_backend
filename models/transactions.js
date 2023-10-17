@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3');
-const { open } = require('sqlite');
+const { open } = require('sqlite3');
 const path = require('path');
 
 const dbPath = path.join(__dirname, 'mydatabase.db');
@@ -10,8 +10,8 @@ const initializeDatabase = async () => {
         driver: sqlite3.Database,
     });
 
-    const createTableQuery = ` CREATAE TABLE IF NOT EXSISTS transactions (
-        id INTERGER PRIMARY KEY,
+    const createTableQuery = ` CREATE TABLE IF NOT EXSISTS transactions (
+        id INTEGER PRIMARY KEY,
         item_name TEXT,
         amount REAL,
         date TEXT,

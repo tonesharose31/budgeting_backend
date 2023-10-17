@@ -2,6 +2,9 @@ const faker = require('faker');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('mydatabase.db');
 
+function seedDatabase() { 
+
+
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS transactions (
         id INTEGER PRIMARY KEY,
@@ -11,6 +14,7 @@ db.serialize(() => {
         from_who TEXT,
         category TEXT
     )`);
+    
 
     const numberOfRecords = 20;
 
@@ -36,3 +40,5 @@ db.serialize(() => {
         });
     });
 });
+} 
+module.exports = seedDatabase;
