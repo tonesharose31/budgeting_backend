@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../routes');
+const db = require('../models/transactions');
 
 router.get('/', async (req, res) => {
     try{
-        const transactions = await db.Transaction.findALL();
+        const transactions = await db.transactions.findALL();
         res.json(transactions);
     }catch (error){
         console.error(error);
