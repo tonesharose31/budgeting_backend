@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3');
-const { open } = require('sqlite3');
+const { open } = require('sqlite');
 const path = require('path');
 
 const dbPath = path.join(__dirname, 'mydatabase.db');
@@ -15,8 +15,8 @@ const initializeDatabase = async () => {
         item_name TEXT,
         amount REAL,
         date TEXT,
-        from TEXT,
-        catergory TEXT
+        from_who TEXT,
+        category TEXT
     );`
 
     await db.exec(createTableQuery);
@@ -25,4 +25,11 @@ const initializeDatabase = async () => {
 
 };
 
-module.exports = {initializeDatabase,};
+initializeDatabase()
+.then(db => {
+    console.log('Database initialized and table created.'); 
+})
+.catch(err =>{
+    console.error('Error initializing the database:', err);
+});
+
