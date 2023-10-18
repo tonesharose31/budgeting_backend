@@ -2,7 +2,6 @@ const express = require('express');
 const transactions = express.Router();
 const mockData = require('../models/transactions')
 
-
 function getData(req, res) {
     try {
       res.json(mockData);
@@ -13,5 +12,5 @@ function getData(req, res) {
   }
   
   transactions.get('/', getData);
-  
-  module.exports = transactions;
+
+module.exports = transactions;
