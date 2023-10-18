@@ -1,13 +1,8 @@
 const express = require('express');
+const transactionsController = require('./controllers/transactionsController');
 const app = express();
 
-const seedDatabase = require("./seed/seed");
-seedDatabase();
-
-const transactionsRouter = require('./routes/transactions');
-
-app.use('/transactions', transactions);
-
-
+app.use(express.json());
+app.use("/transactions", );
 
 module.exports = app

@@ -1,36 +1,16 @@
-const sqlite3 = require('sqlite3');
-const { open } = require('sqlite3');
-const path = require('path');
-
-const dbPath = path.join(__dirname, 'mydatabase.db');
-
-const initializeDatabase = async () => {
-    const db = await open({
-        filename:dbPath,
-        driver: sqlite3.Database,
-    });
-
-    const createTableQuery = ` CREATE TABLE IF NOT EXISTS transactions (
-        id INTEGER PRIMARY KEY,
-        item_name TEXT,
-        amount REAL,
-        date TEXT,
-        from_who TEXT,
-        category TEXT
-    );`
-
-    await db.exec(createTableQuery);
-
-    return db;
-
-};
-
-initializeDatabase()
-.then(db => {
-    console.log('Database initialized and table created.'); 
-})
-.catch(err =>{
-    console.error('Error initializing the database:', err);
-});
-
-module.exports = initializeDatabase
+const mockData = [{
+    id: 154,
+    iten_name: 'Salary',
+    amount: 5000,
+    date: '2023-10-15',
+    from_who: 'Employer Inc',
+    category: 'Income',
+},
+{ id: 155,
+    iten_name: 'Grocerires',
+    amount: 5000,
+    date: '2023-06-09',
+    from_who: 'Employer Inc',
+    category: 'Income',
+}
+]
