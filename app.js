@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 
-const transactionsRouter = require('./routes/transaction');
-app.use('/transactions', transactionsRouter);
-
-
 const seedDatabase = require("./seed/seed");
 seedDatabase();
+
+const transactionsRouter = require('./routes/transactions');
+
+app.use('/transactions', transactions);
+
+
 
 module.exports = app

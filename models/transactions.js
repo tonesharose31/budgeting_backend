@@ -10,7 +10,7 @@ const initializeDatabase = async () => {
         driver: sqlite3.Database,
     });
 
-    const createTableQuery = ` CREATE TABLE IF NOT EXSISTS transactions (
+    const createTableQuery = ` CREATE TABLE IF NOT EXISTS transactions (
         id INTEGER PRIMARY KEY,
         item_name TEXT,
         amount REAL,
@@ -33,3 +33,4 @@ initializeDatabase()
     console.error('Error initializing the database:', err);
 });
 
+module.exports = initializeDatabase
