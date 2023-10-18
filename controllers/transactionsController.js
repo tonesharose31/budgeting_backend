@@ -12,6 +12,6 @@ function getData(req, res) {
     }
   }
   
-  transactions.get('/transactions', getData);
+  transactions.get('/', getData);
   
   module.exports = transactions;
