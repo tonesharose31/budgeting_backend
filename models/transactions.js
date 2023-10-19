@@ -4,14 +4,14 @@ const mockData =
     iten_name: 'Salary',
     amount: 500,
     date: '2023-10-15',
-    from_who: 'Employer Inc',
+    from: 'Employer Inc',
     category: 'Income',
 },
 { id: 155,
     iten_name: 'Grocerires',
     amount: 400,
     date: '2023-06-09',
-    from_who: 'Employer Inc',
+    from: 'Employer Inc',
     category: 'Income',
 },
 {
@@ -19,15 +19,15 @@ const mockData =
     item_name: 'Groceries',
     amount: 500,
     date: '2023-10-20',
-    from_who: 'Grocery Store A',
+    from: 'Grocery Store A',
     category: 'Food',
 },
 {
     id: 287,
     item_name: 'Gasoline',
-    amount: 300,
+    amount: 30.0,
     date: '2023-10-21',
-    from_who: 'Gas Station X',
+    from: 'Gas Station X',
     category: 'Transportation',
 },
 {
@@ -35,7 +35,7 @@ const mockData =
     item_name: 'Movie Tickets',
     amount: 250,
     date: '2023-10-22',
-    from_who: 'Cinema World',
+    from: 'Cinema World',
     category: 'Entertainment',
 },
 {
@@ -43,7 +43,7 @@ const mockData =
     item_name: 'Groceries',
     amount: 50.0,
     date: '2023-10-15',
-    from_who: 'Supermart',
+    from: 'Supermart',
     category: 'Food',
 },
 {
@@ -51,7 +51,7 @@ const mockData =
     item_name: 'Internet Bill',
     amount: 60.0,
     date: '2023-10-16',
-    from_who: 'ISP Inc.',
+    from: 'ISP Inc.',
     category: 'Utilities',
 },
 {
@@ -59,7 +59,7 @@ const mockData =
     item_name: 'Gasoline',
     amount: 30.0,
     date: '2023-10-17',
-    from_who: 'Gas Station X',
+    from: 'Gas Station X',
     category: 'Transportation',
 },
 {
@@ -67,7 +67,7 @@ const mockData =
     item_name: 'Groceries',
     amount: 50.0,
     date: '2023-10-15',
-    from_who: 'Supermart',
+    from: 'Supermart',
     category: 'Food',
 },
 {
@@ -75,7 +75,7 @@ const mockData =
     item_name: 'Internet Bill',
     amount: 60.0,
     date: '2023-10-16',
-    from_who: 'ISP Inc.',
+    from: 'ISP Inc.',
     category: 'Utilities',
 },
 {
@@ -83,7 +83,7 @@ const mockData =
     item_name: 'Gasoline',
     amount: 30.0,
     date: '2023-10-17',
-    from_who: 'Gas Station X',
+    from: 'Gas Station X',
     category: 'Transportation',
 },
 {
@@ -91,7 +91,7 @@ const mockData =
     item_name: 'Dinner Out',
     amount: 400,
     date: '2023-10-18',
-    from_who: 'Local Restaurant',
+    from: 'Local Restaurant',
     category: 'Food',
 },
 {
@@ -99,7 +99,7 @@ const mockData =
     item_name: 'Phone Bill',
     amount: 700,
     date: '2023-10-19',
-    from_who: 'Telco Corp',
+    from: 'Telco Corp',
     category: 'Utilities',
 },
 {
@@ -107,7 +107,7 @@ const mockData =
     item_name: 'Movie Tickets',
     amount: 250,
     date: '2023-10-20',
-    from_who: 'Cinema World',
+    from: 'Cinema World',
     category: 'Entertainment',
 },
 {
@@ -115,7 +115,7 @@ const mockData =
     item_name: 'Clothing',
     amount: 800,
     date: '2023-10-21',
-    from_who: 'Fashion Store',
+    from: 'Fashion Store',
     category: 'Shopping',
 },
 {
@@ -123,7 +123,7 @@ const mockData =
     item_name: 'Taxi Fare',
     amount: 200,
     date: '2023-10-22',
-    from_who: 'City Cabs',
+    from: 'City Cabs',
     category: 'Transportation',
 },
 {
@@ -131,7 +131,7 @@ const mockData =
     item_name: 'Groceries',
     amount: 450,
     date: '2023-10-23',
-    from_who: 'Supermart',
+    from: 'Supermart',
     category: 'Food',
 },
 {
@@ -139,7 +139,7 @@ const mockData =
     item_name: 'Gym Membership',
     amount: 550,
     date: '2023-10-24',
-    from_who: 'Fitness Center',
+    from: 'Fitness Center',
     category: 'Health',
 },
 ]
