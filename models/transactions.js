@@ -1,5 +1,4 @@
-const mockData =  { 
-    transactions:
+const mockData =  
     [{
     id: 154,
     iten_name: 'Salary',
@@ -143,7 +142,6 @@ const mockData =  {
     from_who: 'Fitness Center',
     category: 'Health',
 },
-],
-
-};
+]
+;
  module.exports = mockData;

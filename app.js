@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const transactions = require('./controllers/transactionsController');
-// app.use(express.json());
+ 
+app.use(express.json());
+app.use('/api', transactions);
+
 app.use("/transactions", transactions);
 
 module.exports = app
