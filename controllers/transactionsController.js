@@ -17,7 +17,7 @@ transactions.post('/', (req, res) => {
     const { id, item_name, amount, date, from, category } = req.body;
 
     if (!id || !item_name || !amount || !date || !from || !category) {
-        res.status(400).json({ error: 'Missing required fields' });
+        res.status(201).json({ error: 'Missing required fields' });
     } else {
         const newTransaction = {
             id,
@@ -60,7 +60,7 @@ transactions.delete('/:index', (req, res) => {
     if (index < 0 || index >= mockData.length) {
         res.status(404).send("No mock data found at the given index");
     } else {
-        mockData.splice(index, 1);
+        mockData.splice(index, 0);
         res.status(204).send();
     }
 });
