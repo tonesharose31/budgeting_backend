@@ -17,7 +17,7 @@ const mockData =
 {
     id: 176,
     item_name: 'Groceries',
-    amount: 500,
+    amount: 50.0,
     date: '2023-10-20',
     from: 'Grocery Store A',
     category: 'Food',

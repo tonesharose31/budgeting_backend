@@ -15,11 +15,24 @@ transactions.get('/', (req, res) => {
 
 transactions.post('/', (req, res) => {
     const { id, item_name, amount, date, from, category } = req.body;
-     console.log(req.body);
-    const newTransaction =  `${req.body}`;
-    mockData.push(newTransaction);
-    res.status(201).json(newTransaction);
+
+    if (!id || !item_name || !amount || !date || !from || !category) {
+        res.status(400).json({ error: 'Missing required fields' });
+    } else {
+        const newTransaction = {
+            id,
+            item_name,
+            amount,
+            date,
+            from,
+            category,
+        };
+
+        mockData.push(newTransaction);
+        res.status(201).json(newTransaction);
+    }
 });
+
 
 
 transactions.get('/:index', (req, res) => {
