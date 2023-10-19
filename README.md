@@ -1,6 +1,6 @@
-# budgeting_backend
+# Budgeting Backend
 
-** Budgeting Backend API**
+        ** Budgeting Backend API**
 
 The Budgeting Backend API is a RESTful API that provides endpoints for managing financial transactions. It allows users to create, read, update, and delete transactions, making it a fundamental tool for budgeting applications.
 
@@ -136,7 +136,7 @@ We would like to acknowledge the use of the following libraries and tools in bui
 
 - Express.js
 
-If you have any questions, issues, or suggestions, you can reach out to us at:
+If you have any questions, issues, or suggestions, you can reach out to me at:
 
 - [tonesharose@pursuit.org](mailto:tonesharose@pursuit.org)
 - [https://github.com/tonesharose31](https://github.com/tonesharose31)
