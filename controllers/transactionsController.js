@@ -31,6 +31,16 @@ transactions.get('/:index', (req, res) => {
     }
 });
 
+transactions.put('/:index', (req, res) => {
+    const { index } = req.params;
+    if (index < 0 || index >= mockData.length) {
+        res.status(404).send("No mock data found at the given index");
+    } else {
+        const updatedTransaction = req.body;
+        mockData[index] = updatedTransaction;
+        res.status(200).json(updatedTransaction);
+    }
+});
 
 transactions.delete('/:index', (req, res) => {
     const { index } = req.params;
