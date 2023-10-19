@@ -29,6 +29,16 @@ transactions.get("/:index", (req, res) => {
     } else { 
         res.json(mockData[index]);
     }
-})
 
-module.exports = transactions;
+
+    transactions.delete('/:index', (req, res) => {
+        const { index } = req.params;
+       if (index < 0 || index >= mockData.length){
+            res.status(404).send("No mockdata found at index");
+         } else {
+            mockData.splice(index, 1);
+            res.status(204).send();
+        }
+});
+
+module.exports = transactions
