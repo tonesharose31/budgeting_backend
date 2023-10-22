@@ -42,16 +42,12 @@ transactions.get('/:index', (req, res) => {
 });
 
 transactions.put('/:index', (req, res) => {
-    // console.log('PUT request received');
     const { index } = req.params;
     if (index < 0 || index >= mockData.length) {
-        // console.log('Invalid index');
         res.status(404).send("No mock data found at the given index");
     } else {
         const updatedTransaction = req.body;
-        // console.log('Updated Transaction:', updatedTransaction);
         mockData[index] = updatedTransaction;
-        // console.log('mockData after update:', mockData);
         res.status(200).json(updatedTransaction);
     }
 });
@@ -61,9 +57,13 @@ transactions.delete('/:index', (req, res) => {
     if (index < 0 || index >= mockData.length) {
         res.status(404).send("No mock data found at the given index");
     } else {
+       // console.log('Deleting at index:', index);
         mockData.splice(index, 1);
+       // console.log('Updated mockData:', mockData);
         res.status(204).send();
     }
 });
+
+
 
 module.exports = transactions;

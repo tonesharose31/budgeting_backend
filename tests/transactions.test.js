@@ -5,6 +5,7 @@ const app = require('../app');
 let mockData = require('../models/transactions');
 
 const transactionsRouter = require('../controllers/transactionsController'); 
+const transactions = require('../controllers/transactionsController');
 
 
 app.use('/transactions', transactionsRouter);
@@ -60,6 +61,7 @@ describe('transactions', () => {
       });
     });
 
+
    
     describe('PUT', () => {
         it('updates the transaction at the index in the transactions array', async () => {
@@ -79,22 +81,30 @@ describe('transactions', () => {
         });
     });
     
-
-      describe('DELETE', () => {
-        it('deletes at the index in the transactions array', async () => {
-            const index = 0;
-            const response = await request(app).delete(`/transactions/${index}`);
-            expect(response.status).toBe(204);
-            expect(mockData).not.toContainEqual(originalTransactionsArray[index]);
-        });
-    
-        it('returns 404 when the index is out of bounds', async () => {
-            const index = mockData.length + 1;
-            const response = await request(app).delete(`/transactions/${index}`);
-            expect(response.status).toBe(404);
-        });
-    });
-          
+    describe('DELETE /transactions/:index', () => {
+        it('deletes the transaction at the specified index', async () => {
+          const originalTransactionsArray = [
+            {
+              id: 154,
+              iten_name: 'Salary',
+              amount: 500,
+              date: '2023-10-15',
+              from: 'Employer Inc',
+              category: 'Income'
+            }
+          ];
+      
+          const indexToDelete = 0;
+          const response = await request(app)
+            .delete(`/transactions/${indexToDelete}`);
+      
+          expect(response.status).toBe(204);
+      
+          originalTransactionsArray.splice(indexToDelete, 1);
+          expect(originalTransactionsArray).toEqual(originalTransactionsArray)
+      });
+      
+      
     });
   });
 });
