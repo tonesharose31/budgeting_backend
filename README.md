@@ -66,6 +66,17 @@ The Budgeting Backend API provides the following endpoints:
 ##
 The Budgeting Backend API can be configured using environment variables.
 
+## Testing
+
+### Purpose
+The tests for this project ensure that the application functions correctly and that new changes do not introduce bugs. This section provides instructions for running the tests and troubleshooting common issues.
+
+### Running Tests
+To run tests for the project, you can use the following command:
+`npm test`
+
+
+
 
 ## Troubleshooting
 
@@ -113,6 +124,16 @@ If you encounter issues while using the Budgeting Backend API, here are some com
 **Solution:** 
 - Check for database connectivity issues.
 - Verify your database queries and data setup.
+
+### Issue 6: Testing 
+
+**Symptoms:** If you encounter any issues while running tests, consider the following:
+
+- Make sure your development environment is set up correctly.
+- Ensure that all dependencies are installed by running `npm install`.
+- Check if your test scripts and configurations are accurate in your `package.json` file.
+- Review error messages or logs in your terminal for details on what went wrong.
+
 
 If you encounter any other problems or have specific questions, feel free to reach out to us via [email](tonesharose@pursuit.org) or [GitHub](https://github.com/tonesharose31) for assistance.
 

@@ -23,7 +23,7 @@ describe('transactions', () => {
 
   describe('/transactions', () => {
     describe('POST', () => {
-      it('sends the transactions array', async () => {
+      it('add new transaction to array', async () => {
         const response = await request(app).get('/transactions');
         expect(response.status).toBe(200);
         expect(response.body).toEqual(mockData);
@@ -103,8 +103,7 @@ describe('transactions', () => {
           originalTransactionsArray.splice(indexToDelete, 1);
           expect(originalTransactionsArray).toEqual(originalTransactionsArray)
       });
-      
-      
+    })
     });
   });
 });

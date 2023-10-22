@@ -57,13 +57,8 @@ transactions.delete('/:index', (req, res) => {
     if (index < 0 || index >= mockData.length) {
         res.status(404).send("No mock data found at the given index");
     } else {
-       // console.log('Deleting at index:', index);
         mockData.splice(index, 1);
-       // console.log('Updated mockData:', mockData);
         res.status(204).send();
     }
 });
-
-
-
 module.exports = transactions;
