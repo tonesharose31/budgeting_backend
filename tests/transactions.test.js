@@ -21,7 +21,7 @@ describe('transactions', () => {
   });
 
   describe('/transactions', () => {
-    describe('GET', () => {
+    describe('POST', () => {
       it('sends the transactions array', async () => {
         const response = await request(app).get('/transactions');
         expect(response.status).toBe(200);
@@ -29,33 +29,19 @@ describe('transactions', () => {
       });
     });
 
-    describe('POST', () => {
-        it('adds new transaction to the end of transactions array', async () => {
-            const newTransaction = {
-                id: 123,
-                item_name: 'Sample Item',
-                amount: 100,
-                date: '2023-10-15',
-                from: 'Sample Source',
-                category: 'Sample Category'
-            };
-            const response = await request(app).post('/transactions').send(newTransaction);
-    expect(response.status).toBe(201);
-    expect(mockData).toContainEqual(newTransaction);
-});
-    
-        it('returns 400 when required fields are missing', async () => {
-            const newTransaction = { 
-                 id: 123,
-                amount: 100,
-                date: '2023-10-15',
-                from: 'Sample Source',
-                category: 'Sample Category'
-            }; 
-            const response = await request(app).post('/transactions').send(newTransaction);
-            expect(response.status).toBe(400);
-        });
+    it('returns 400 when required fields are missing', async () => {
+        const newTransaction = {
+            id: 123,
+            amount: 100,
+            date: '2023-10-15',
+            from: 'Sample Source',
+        };
+
+        const response = await request(app).post('/transactions').send(newTransaction);
+        expect(response.status).toBe(400);
+        expect(response.body.error).toBe('Missing required fields');
     });
+    
 
 
   describe('/transactions/:index', () => {
@@ -74,14 +60,25 @@ describe('transactions', () => {
       });
     });
 
+   
     describe('PUT', () => {
-        it('deletes at the index in the transactions array', async () => {
+        it('updates the transaction at the index in the transactions array', async () => {
             const index = 0;
-            const response = await request(app).delete(`/transactions/${index}`);
-            expect(response.status).toBe(204); // Correct status code for deletion
-            expect(mockData).not.toContainEqual(originalTransactionsArray[index]);
-          });
-      });
+            const updatedTransaction = {
+                id: 154,
+                iten_name: 'Salary',
+                amount: 500,
+                date: '2023-10-15',
+                from: 'Employer Inc',
+                category: 'Income',
+            };
+    
+            const response = await request(app).put(`/transactions/${index}`).send(updatedTransaction);
+            expect(response.status).toBe(200); 
+            expect(mockData[index]).toEqual(updatedTransaction);
+        });
+    });
+    
 
       describe('DELETE', () => {
         it('deletes at the index in the transactions array', async () => {

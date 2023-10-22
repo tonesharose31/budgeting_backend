@@ -21,19 +21,16 @@ transactions.post('/', (req, res) => {
     } else {
         const newTransaction = {
             id,
-            item_name,
+            item_name,  
             amount,
             date,
             from,
             category,
         };
-
         mockData.push(newTransaction);
         res.status(201).json(newTransaction);
     }
 });
-
-
 
 transactions.get('/:index', (req, res) => {
     const { index } = req.params;
@@ -45,16 +42,16 @@ transactions.get('/:index', (req, res) => {
 });
 
 transactions.put('/:index', (req, res) => {
-    console.log('PUT request received');
+    // console.log('PUT request received');
     const { index } = req.params;
     if (index < 0 || index >= mockData.length) {
-        console.log('Invalid index');
+        // console.log('Invalid index');
         res.status(404).send("No mock data found at the given index");
     } else {
         const updatedTransaction = req.body;
-        console.log('Updated Transaction:', updatedTransaction);
+        // console.log('Updated Transaction:', updatedTransaction);
         mockData[index] = updatedTransaction;
-        console.log('mockData after update:', mockData);
+        // console.log('mockData after update:', mockData);
         res.status(200).json(updatedTransaction);
     }
 });
