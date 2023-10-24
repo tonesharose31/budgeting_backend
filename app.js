@@ -7,8 +7,9 @@ app.use(express.json());
 
 app.use("/transactions", transactions);
 
-app.use((req, res) => {
-  res.status(404).json({ error: 'Not Found' });
-});
+// app.use((req, res) => {
+//   res.status(404).json({ error: 'Not Found' });
+// });
+
 
 module.exports = app
