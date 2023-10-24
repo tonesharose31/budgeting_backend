@@ -68,7 +68,7 @@ describe('transactions', () => {
             const index = 0;
             const updatedTransaction = {
                 id: 154,
-                iten_name: 'Salary',
+                item_name: 'Salary',
                 amount: 500,
                 date: '2023-10-15',
                 from: 'Employer Inc',

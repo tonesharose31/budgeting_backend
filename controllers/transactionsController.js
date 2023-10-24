@@ -62,5 +62,4 @@ transactions.delete('/:index', (req, res) => {
     }
 });
 
-  
 module.exports = transactions;

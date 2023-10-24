@@ -1,14 +1,14 @@
 const mockData =  
     [{
     id: 154,
-    iten_name: 'Salary',
+    item_name: 'Salary',
     amount: 500,
     date: '2023-10-15',
     from: 'Employer Inc',
     category: 'Income',
 },
 { id: 155,
-    iten_name: 'Grocerires',
+    item_name: 'Grocerires',
     amount: 400,
     date: '2023-06-09',
     from: 'Employer Inc',
