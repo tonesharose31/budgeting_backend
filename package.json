@@ -4,8 +4,8 @@
   "description": "Budgeting_backend_API",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js"
   },
   "author": "Tonesha Rose",
   "license": "ISC",
